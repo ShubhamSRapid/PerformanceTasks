@@ -63,7 +63,7 @@ __decorate([
     __param(1, (0, common_1.Body)("password")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", user_entity_1.User)
 ], UserController.prototype, "changePassword", null);
 __decorate([
     (0, common_1.Delete)("/:id"),
