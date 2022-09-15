@@ -7,7 +7,6 @@ import {
   Post,
   Req,
 } from '@nestjs/common';
-import { Request } from 'express';
 import { UserService } from './user.service';
 
 @Controller('/user')
