@@ -18,23 +18,23 @@ export class UserController {
     return this.userService.getUsers();
   }
 
-  @Post()
-  createUser(@Req() req: Request) {
-    return this.userService.createUser(req);
-  }
+  // @Post()
+  // createUser() {
+  //   return this.userService.createUser(req);
+  // }
 
-  @Patch('/:id')
-  Update(@Req() req: Request, @Param() params: { id: number }) {
-    return this.userService.update(req, params);
-  }
+  // @Patch('/:id')
+  // Update(@Req() req: Request, @Param() params: { id: number }) {
+  //   return this.userService.update(req, params);
+  // }
 
-  @Get('/:id')
-  getUser(@Param() params: { id: number }) {
-    return this.userService.getUser(params);
-  }
+  // @Get('/:id')
+  // getUser(@Param() params: { id: number }) {
+  //   return this.userService.getUser(params);
+  // }
 
-  @Delete('/:id')
-  deleteUser(@Param() params: { id: number }) {
-    return this.userService.deleteUser(params);
-  }
+  // @Delete('/:id')
+  // deleteUser(@Param() params: { id: number }) {
+  //   return this.userService.deleteUser(params);
+  // }
 }
