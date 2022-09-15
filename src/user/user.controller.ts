@@ -26,18 +26,18 @@ export class UserController {
     return this.userService.createUser(createUserDto);
   }
 
-  // @Patch('/:id')
-  // Update(@Req() req: Request, @Param() params: { id: number }) {
-  //   return this.userService.update(req, params);
-  // }
+  @Get("/:id")
+  getUser(@Param("id") id: number): User {
+    return this.userService.getUserById(id);
+  }
 
-  // @Get('/:id')
-  // getUser(@Param() params: { id: number }) {
-  //   return this.userService.getUser(params);
-  // }
+  @Patch("/:id/password")
+  changePassword(@Param("id") id: number, @Body("password") password: string) {
+    return this.userService.updatePassword(id, password);
+  }
 
-  // @Delete('/:id')
-  // deleteUser(@Param() params: { id: number }) {
-  //   return this.userService.deleteUser(params);
-  // }
+  @Delete("/:id")
+  deleteUser(@Param("id") id: number) {
+    return this.userService.deleteUser(id);
+  }
 }

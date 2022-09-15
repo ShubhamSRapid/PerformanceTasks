@@ -6,4 +6,7 @@ export declare class UserController {
     constructor(userService: UserService);
     getUsers(): any[];
     createUser(createUserDto: CreateUserDto): User;
+    getUser(id: number): User;
+    changePassword(id: number, password: string): User;
+    deleteUser(id: number): void;
 }

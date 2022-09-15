@@ -27,6 +27,15 @@ let UserController = class UserController {
     createUser(createUserDto) {
         return this.userService.createUser(createUserDto);
     }
+    getUser(id) {
+        return this.userService.getUserById(id);
+    }
+    changePassword(id, password) {
+        return this.userService.updatePassword(id, password);
+    }
+    deleteUser(id) {
+        return this.userService.deleteUser(id);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -41,6 +50,28 @@ __decorate([
     __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
     __metadata("design:returntype", user_entity_1.User)
 ], UserController.prototype, "createUser", null);
+__decorate([
+    (0, common_1.Get)("/:id"),
+    __param(0, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", user_entity_1.User)
+], UserController.prototype, "getUser", null);
+__decorate([
+    (0, common_1.Patch)("/:id/password"),
+    __param(0, (0, common_1.Param)("id")),
+    __param(1, (0, common_1.Body)("password")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, String]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "changePassword", null);
+__decorate([
+    (0, common_1.Delete)("/:id"),
+    __param(0, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "deleteUser", null);
 UserController = __decorate([
     (0, common_1.Controller)("/user"),
     __metadata("design:paramtypes", [user_service_1.UserService])

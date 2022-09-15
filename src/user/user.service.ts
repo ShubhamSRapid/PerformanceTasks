@@ -11,26 +11,30 @@ export class UserService {
   }
 
   createUser(createUserDto: CreateUserDto) {
-    const { username, password } = createUserDto;
+    const { id, username, password } = createUserDto;
     const user: User = {
+      id,
       username,
       password,
     };
     this.users.push(user);
-    console.log(user);
 
     return user;
   }
 
-  // update(req: Request, params: { id: number }) {
-  //   return { body: req.body, params };
-  // }
+  getUserById(id: number): User {
+    const found = this.users.find((user) => user.id === id);
+    return found;
+  }
 
-  // getUser(params: { id: number }) {
-  //   return params;
-  // }
+  updatePassword(id: number, password: string): User {
+    const user = this.getUserById(id);
+    user.password = password;
+    return user;
+  }
 
-  // deleteUser(params: { id: number }) {
-  //   return params;
-  // }
+  deleteUser(id: number) {
+    const user = this.getUserById(id);
+    this.users = this.users.filter((user) => user.id !== id);
+  }
 }

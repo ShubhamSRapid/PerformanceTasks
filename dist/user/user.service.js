@@ -16,14 +16,27 @@ let UserService = class UserService {
         return this.users;
     }
     createUser(createUserDto) {
-        const { username, password } = createUserDto;
+        const { id, username, password } = createUserDto;
         const user = {
+            id,
             username,
             password,
         };
         this.users.push(user);
-        console.log(user);
         return user;
+    }
+    getUserById(id) {
+        const found = this.users.find((user) => user.id === id);
+        return found;
+    }
+    updatePassword(id, password) {
+        const user = this.getUserById(id);
+        user.password = password;
+        return user;
+    }
+    deleteUser(id) {
+        const user = this.getUserById(id);
+        this.users = this.users.filter((user) => user.id !== id);
     }
 };
 UserService = __decorate([
