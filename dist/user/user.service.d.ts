@@ -1,3 +1,7 @@
+import { CreateUserDto } from "./dto/create-user.dto";
+import { User } from "./user.entity";
 export declare class UserService {
-    getUsers(): string;
+    private users;
+    getUsers(): any[];
+    createUser(createUserDto: CreateUserDto): User;
 }

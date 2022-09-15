@@ -6,28 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserService = void 0;
-const common_1 = require("@nestjs/common");
-let UserService = class UserService {
-    constructor() {
-        this.users = [];
-    }
-    getUsers() {
-        return this.users;
-    }
-    createUser(createUserDto) {
-        const { username, password } = createUserDto;
-        const user = {
-            username,
-            password,
-        };
-        this.users.push(user);
-        console.log(user);
-        return user;
-    }
+exports.User = void 0;
+const typeorm_1 = require("typeorm");
+let User = class User {
 };
-UserService = __decorate([
-    (0, common_1.Injectable)()
-], UserService);
-exports.UserService = UserService;
-//# sourceMappingURL=user.service.js.map
+User = __decorate([
+    (0, typeorm_1.Entity)()
+], User);
+exports.User = User;
+//# sourceMappingURL=user.entity.js.map
